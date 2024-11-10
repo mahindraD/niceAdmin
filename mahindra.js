@@ -82,9 +82,4 @@ function recentActivity(){
 sales_func(450);
 revenue_func(180);
 customer_func(789);
-customer_func(456);
-sales_func(450);
-revenue_func(180);
-customer_func(789);
-customer_func(456);
 recentActivity();
