@@ -94,7 +94,7 @@ if ("content" in document.createElement("template")) {
     const listBody = clone.querySelector(".card .card-body .activity");
     const tt = document.querySelector("#list");
     const cc = tt.content.cloneNode(true);
-    cc.querySelector(".activity-item .activity-label").innerText=element.label;
+    cc.querySelector(".activity-item .activite-label").innerText=element.label;
     cc.querySelector(".activity-item .activity-content").innerText=element.content;
     listBody.appendChild(cc);
   });
