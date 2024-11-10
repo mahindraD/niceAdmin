@@ -79,7 +79,38 @@ function recentActivity(){
       }
 }
 
+function recentActivity_copy(array){
+  // Test to see if the browser supports the HTML template element by checking
+// for the presence of the template element's content attribute.
+if ("content" in document.createElement("template")) {
+  // Instantiate the table with the existing HTML tbody
+  // and the row with the template
+  const tbody = document.querySelector(".main .section .row .rightside");
+  const template = document.querySelector("#recent_activity_copy_temp");
+  // Clone the new row and insert it into the table
+  const clone = template.content.cloneNode(true); 
+
+  array.forEach(element => {
+    const listBody = clone.querySelector(".card .card-body .activity");
+    const tt = document.querySelector("#list");
+    const cc = tt.content.cloneNode(true);
+    cc.querySelector(".activity-item .activity-label").innerText=element.label;
+    cc.querySelector(".activity-item .activity-content").innerText=element.content;
+    listBody.appendChild(cc);
+  });
+
+  tbody.appendChild(clone);
+  } else {
+  // Find another way to add the rows to the table because
+  // the HTML template element is not supported.
+  }
+}
+
 sales_func(450);
 revenue_func(180);
 customer_func(789);
-recentActivity();
+// recentActivity();
+
+array = [{label:"7min",content:"mumbai indians"},{label:"25min",content:"csk"},{label:"45min",content:"mumbai indians"},{label:"50min",content:"csk"}]
+recentActivity_copy(array);
+
